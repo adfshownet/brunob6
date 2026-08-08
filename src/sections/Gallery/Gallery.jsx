@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useFadeIn } from '../../hooks/useFadeIn'
 import styles from './Gallery.module.css'
 import artist from '../../data/artist'
@@ -6,6 +6,12 @@ import artist from '../../data/artist'
 export default function Gallery() {
   const [ref, visible] = useFadeIn()
   const [lightbox, setLightbox] = useState(null)
+  const lightboxRef = useRef(null)
+
+  // Move foco para o lightbox ao abrir — necessário para capturar Escape via teclado
+  useEffect(() => {
+    if (lightbox) lightboxRef.current?.focus()
+  }, [lightbox])
 
   const photos = artist.gallery.filter((g) => g.type === 'photo')
   const videos = artist.gallery.filter((g) => g.type === 'video')
@@ -67,6 +73,7 @@ export default function Gallery() {
       {lightbox && (
         <div
           className={styles.lightbox}
+          ref={lightboxRef}
           role="dialog"
           aria-modal="true"
           aria-label={`Foto ampliada: ${lightbox.alt}`}
