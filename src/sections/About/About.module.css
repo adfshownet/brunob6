@@ -1,0 +1,101 @@
+.about {
+  background: var(--color-bg-alt);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+/* ── Imagem ── */
+.imageWrap {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .imageWrap {
+    margin: 0;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5/6;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  display: block;
+}
+
+/* Borda decorativa deslocada */
+.imageBorder {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: -16px;
+  bottom: -16px;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  z-index: -1;
+}
+
+/* ── Texto ── */
+.label {
+  font-size: var(--font-size-sm);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.bio {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.bioLong {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-xl);
+  white-space: pre-line;
+}
+
+/* ── Timeline ── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  border-left: 2px solid var(--color-accent);
+  padding-left: var(--space-lg);
+}
+
+.timelineItem {
+  display: flex;
+  gap: var(--space-md);
+  align-items: baseline;
+}
+
+.timelineYear {
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  color: var(--color-accent);
+  min-width: 60px;
+}
+
+.timelineText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

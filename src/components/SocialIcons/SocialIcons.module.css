@@ -1,0 +1,25 @@
+.list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  border-radius: 50%;
+}
+
+.link:hover {
+  color: var(--color-accent);
+  transform: scale(1.15);
+}
+
+/* Tamanhos */
+.sm svg  { width: 20px; height: 20px; }
+.md svg  { width: 24px; height: 24px; }
+.lg svg  { width: 32px; height: 32px; }
