@@ -1,0 +1,104 @@
+.footer {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+@media (min-width: 600px) {
+  .inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  .inner { grid-template-columns: 1.5fr 1fr 1fr; }
+}
+
+.brand {}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.genre {
+  font-size: var(--font-size-xs);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.social { margin-top: var(--space-md); }
+
+.linksTitle {
+  font-size: var(--font-size-xs);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+}
+
+.links ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition-fast);
+  padding: 0;
+}
+
+.link:hover { color: var(--color-accent); }
+
+.email {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  word-break: break-all;
+}
+
+.email:hover { color: var(--color-accent); }
+
+.bottom {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  align-items: center;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 600px) {
+  .bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.bottom a {
+  color: var(--color-accent);
+  transition: opacity var(--transition-fast);
+}
+.bottom a:hover { opacity: 0.8; }

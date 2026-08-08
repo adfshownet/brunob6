@@ -1,0 +1,12 @@
+# Fallback para BrowserRouter em servidores Apache (LocaWeb)
+# Só necessário se você mudar de HashRouter para BrowserRouter.
+# Por padrão o projeto usa HashRouter e este arquivo não é necessário.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

@@ -1,0 +1,118 @@
+.section { background: var(--color-bg); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1.5fr;
+    align-items: start;
+  }
+}
+
+/* ── Info ── */
+.desc {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.emailFallback {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.emailLink {
+  color: var(--color-accent);
+  transition: opacity var(--transition-fast);
+}
+.emailLink:hover { opacity: 0.8; }
+
+/* ── Formulário ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .row { grid-template-columns: 1fr 1fr; }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+.input {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  padding: 0.75rem 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(255, 95, 0, 0.15);
+}
+
+.inputError { border-color: #e53e3e; }
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.input option { background: var(--color-bg-card); }
+
+.error {
+  font-size: var(--font-size-xs);
+  color: #e53e3e;
+}
+
+.submit {
+  align-self: flex-start;
+  padding: 0.875rem 2rem !important;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.successMsg {
+  color: #48bb78;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.errorMsg {
+  color: #e53e3e;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}

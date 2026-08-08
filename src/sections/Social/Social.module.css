@@ -1,0 +1,15 @@
+.section { background: var(--color-bg-alt); }
+
+.content {
+  text-align: center;
+}
+
+.icons {
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.cta {
+  font-size: var(--font-size-md) !important;
+  padding: 1rem 2.5rem !important;
+}
