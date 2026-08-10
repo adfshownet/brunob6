@@ -27,16 +27,23 @@ jobs:
         run: npm run build
 
       - name: Validate FTP secrets
+        env:
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: |
-          if [ -z "${{ secrets.HOST }}" ]; then
+          echo "HOST is set: ${HOST:+yes}"
+          echo "USER is set: ${USER:+yes}"
+          echo "PASSWORD is set: ${PASSWORD:+yes}"
+          if [ -z "$HOST" ]; then
             echo "::error::Missing GitHub secret HOST"
             exit 1
           fi
-          if [ -z "${{ secrets.USER }}" ]; then
+          if [ -z "$USER" ]; then
             echo "::error::Missing GitHub secret USER"
             exit 1
           fi
-          if [ -z "${{ secrets.PASSWORD }}" ]; then
+          if [ -z "$PASSWORD" ]; then
             echo "::error::Missing GitHub secret PASSWORD"
             exit 1
           fi
