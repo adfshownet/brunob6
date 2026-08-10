@@ -5,7 +5,7 @@ Layout *one-pager* com seções navegáveis, design urbano/street, otimizado par
 
 ---
 
-## 🚀 Como rodar localmente
+## 🚀 Como rodar localmente  
 
 ```bash
 # 1. Instalar dependências
