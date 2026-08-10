@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -24,6 +24,21 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Validate FTP secrets
+        run: |
+          if [ -z "${{ secrets.HOST }}" ]; then
+            echo "::error::Missing GitHub secret HOST"
+            exit 1
+          fi
+          if [ -z "${{ secrets.USER }}" ]; then
+            echo "::error::Missing GitHub secret USER"
+            exit 1
+          fi
+          if [ -z "${{ secrets.PASSWORD }}" ]; then
+            echo "::error::Missing GitHub secret PASSWORD"
+            exit 1
+          fi
 
       - name: Deploy to Locaweb FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.0
