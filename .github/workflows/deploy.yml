@@ -28,19 +28,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Locaweb FTP
-        env:
-          HOST: ${{ secrets.HOST }}
-          USER: ${{ secrets.USER }}
-          PASSWORD: ${{ secrets.PASSWORD }}
+      - name: Build completed
         run: |
-          set -e
-          if [ -z "$HOST" ] || [ -z "$USER" ] || [ -z "$PASSWORD" ]; then
-            echo "FTP credentials are not configured"
-            exit 1
-          fi
-
-          sudo apt-get update
-          sudo apt-get install -y lftp
-
-          lftp -e "set ssl:verify-certificate no; mirror -R dist/ public_html/; quit" -u "$USER","$PASSWORD" "$HOST"
+          echo "Build completed successfully"
+          echo "Deploy step removed; publish manually through the hosting panel"
