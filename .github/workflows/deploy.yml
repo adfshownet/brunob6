@@ -1,0 +1,65 @@
+name: Deploy to Locaweb via FTP
+
+on:
+  push:
+    branches:
+      - main
+      - siteinicial
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Validate FTP secrets
+        env:
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USER }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          echo "HOST is set: ${HOST:+yes}"
+          echo "USER is set: ${USER:+yes}"
+          echo "PASSWORD is set: ${PASSWORD:+yes}"
+          if [ -z "$HOST" ]; then
+            echo "::error::Missing GitHub secret HOST"
+            exit 1
+          fi
+          if [ -z "$USER" ]; then
+            echo "::error::Missing GitHub secret USER"
+            exit 1
+          fi
+          if [ -z "$PASSWORD" ]; then
+            echo "::error::Missing GitHub secret PASSWORD"
+            exit 1
+          fi
+
+      - name: Deploy to Locaweb FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
+        with:
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          protocol: ftp
+          port: 21
+          local-dir: dist/
+          server-dir: public_html/
+          exclude: |
+            **/.git*/**
+            **/node_modules/**
+            **/src/**
+            **/README.md
