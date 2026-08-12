@@ -11,7 +11,7 @@
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   /* Parallax leve via transform no scroll — sem JS, só CSS */
   will-change: transform;
@@ -58,8 +58,9 @@
 .tagline {
   font-size: clamp(var(--font-size-md), 3vw, var(--font-size-xl));
   color: var(--color-text-muted);
-  max-width: 500px;
+  max-width: 100%;
   margin: 0 auto var(--space-xl);
+  white-space: nowrap;
 }
 
 .actions {

@@ -35,7 +35,7 @@ export default function Hero() {
             className="btn btn--outline"
             onClick={() => scrollTo('shows')}
           >
-            📅 Ver shows
+            🎬 Clipes
           </button>
         </div>
       </div>

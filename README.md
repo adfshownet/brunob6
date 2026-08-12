@@ -1,11 +1,11 @@
-# Bruno B6 — Site Oficial
+# Bruno B6 — Site Oficial 01
 
 Site institucional do artista **Bruno B6** (POP ROCK), construído com React 18 + Vite.
 Layout *one-pager* com seções navegáveis, design urbano/street, otimizado para mobile.
 
 ---
 
-## 🚀 Como rodar localmente
+## 🚀 Como rodar localmente  
 
 ```bash
 # 1. Instalar dependências
