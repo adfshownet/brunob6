@@ -1,0 +1,29 @@
+.section {
+  background: var(--color-bg-alt);
+}
+
+.videoWrap {
+  max-width: 22rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: #000;
+  border: 1px solid var(--color-border);
+}
+
+.videoTitle {
+  margin-top: var(--space-md);
+  color: var(--color-text);
+}
+
+@media (max-width: 600px) {
+  .video {
+    max-height: none;
+  }
+}

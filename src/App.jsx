@@ -6,6 +6,7 @@ import About from './sections/About/About'
 import Discography from './sections/Discography/Discography'
 import Gallery from './sections/Gallery/Gallery'
 import Shows from './sections/Shows/Shows'
+import Live from './sections/Live/Live'
 import Social from './sections/Social/Social'
 import Contact from './sections/Contact/Contact'
 import Footer from './sections/Footer/Footer'
@@ -34,6 +35,7 @@ export default function App() {
         <Discography />
         <Gallery />
         <Shows />
+        <Live />
         <Social />
         <Contact />
       </main>

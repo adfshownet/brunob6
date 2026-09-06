@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { id: 'musicas', label: 'Músicas' },
   { id: 'galeria', label: 'Galeria' },
   { id: 'shows',   label: 'Clipes'   },
+  { id: 'ao-vivo', label: 'Ao Vivo' },
   { id: 'contato', label: 'Contato' },
 ]
 

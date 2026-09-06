@@ -33,13 +33,19 @@ export default function Contact() {
 
     setStatus('sending')
     try {
-      const res = await fetch(artist.contact.formspreeEndpoint, {
+      const form = e.currentTarget
+      const formData = new FormData(form)
+      const res = await fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(fields),
+        headers: { Accept: 'application/json' },
+        body: formData,
       })
-      if (res.ok) { setStatus('success'); setFields(INITIAL) }
-      else setStatus('error')
+      if (res.ok) {
+        setStatus('success')
+        setFields(INITIAL)
+      } else {
+        setStatus('error')
+      }
     } catch {
       setStatus('error')
     }
@@ -68,6 +74,8 @@ export default function Contact() {
           <form
             className={styles.form}
             onSubmit={handleSubmit}
+            action={artist.contact.formspreeEndpoint}
+            method="POST"
             noValidate
             aria-label="Formulário de contato"
           >
