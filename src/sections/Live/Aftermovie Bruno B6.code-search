@@ -1,0 +1,9 @@
+# Query: Aftermovie Bruno B6
+# ContextLines: 1
+
+Um resultado - Um arquivo
+
+src\sections\Live\Live.jsx:
+  13            <div className={styles.videoWrap}>
+  14:             <video controls preload="metadata" playsInline className={styles.video} title="Estúdio Forno">
+  15                <source src={liveVideo} type="video/mp4" />
