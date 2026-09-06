@@ -15,7 +15,7 @@ export default function Live() {
               <source src={liveVideo} type="video/mp4" />
               Seu navegador não suporta a reprodução deste vídeo.
             </video>
-            <h3 className={styles.videoTitle}>Aftermovie Bruno B6</h3>
+            <h3 className={styles.videoTitle}>Aftermovie Bruno B6
           </div>
         </div>
       </div>
