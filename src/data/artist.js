@@ -16,11 +16,12 @@ const artist = {
 
   // ─── BIOGRAFIA ─────────────────────────────────────────────────────────────
   bio: {
-    short: 'Bruno B6 emergiu como uma força inovadora na cena musical brasileira. Sua jornada artística começou com influências variadas, desde o rock e o reggae, mas foi no rap que encontrou sua verdadeira voz.', // [PLACEHOLDER]
-    long: `Com uma trajetória marcada pela evolução e experimentação, Bruno B6 está sempre expandindo seu repertório musical, trazendo em suas canções uma expressão autêntica de sua jornada pessoal.
-Comentando sobre sua identidade artística, Bruno B6 compartilha: "Minha jornada musical sempre foi uma busca pela verdade e autenticidade. A música me permite compartilhar minha experiência de vida de uma forma nova e emocionante. Estou empolgado para continuar explorando novos horizontes criativos com meus fãs."
-Para mais informações e entrevistas, entre em contato com: Bruno B6 nas redes sociais: Instagram: @brunob6oficial Facebook: @brunob6
-Bruno B6 é um talentoso rapper brasileiro, conhecido por sua habilidade única de mesclar diversos gêneros musicais em suas composições. Sua música é uma reflexão autêntica de sua verdade e espiritualidade. Com uma paixão pela narrativa e uma voz distintamente cativante, Bruno B6 continua a desafiar fronteiras e inspirar através de sua arte.`, // [PLACEHOLDER]
+    short: 'Bruno B6 é um rapper brasileiro que transforma experiências e diferentes influências musicais em uma expressão autêntica.', // [PLACEHOLDER]
+    long: `Entre o rap, o rock e o reggae, constrói uma sonoridade própria, marcada por narrativas pessoais, espiritualidade e uma voz singular.
+Em constante evolução, Bruno B6 explora novos caminhos criativos e busca, através da música, criar conexões verdadeiras com quem acompanha seu trabalho.
+
+CONTATO
+Instagram · @brunob6oficial`, // [PLACEHOLDER]
     highlights: [],
   },
 
@@ -39,7 +40,7 @@ Bruno B6 é um talentoso rapper brasileiro, conhecido por sua habilidade única 
       type: 'single',           // 'album' | 'single' | 'ep'
       title: 'Viver Pra Vencer',
       year: '2024',
-      cover: 'https://i.scdn.co/image/ab6761610000f178e792afe1dce7b256e63f67e3', // capa do single
+      cover: '/viver-pra-vencer.jpg', // capa do single (atualizada localmente)
       // Embed do Spotify para a faixa fornecida
       spotifyEmbed: 'https://open.spotify.com/embed/track/2Z2m07PbboAiWu1LUAOUzm',
       links: {
@@ -53,7 +54,7 @@ Bruno B6 é um talentoso rapper brasileiro, conhecido por sua habilidade única 
       type: 'single',
       title: 'Mulher Valente',
       year: '2024',
-      cover: 'https://i.scdn.co/image/ab6761610000f178e792afe1dce7b256e63f67e3',
+      cover: '/Mulher valente.jpg',
       spotifyEmbed: 'https://open.spotify.com/embed/track/1dfPGKAvhYgPTht836cwi1',
       links: {
         spotify: 'https://open.spotify.com/track/1dfPGKAvhYgPTht836cwi1?si=4af6b16c9e67409e',
@@ -65,7 +66,7 @@ Bruno B6 é um talentoso rapper brasileiro, conhecido por sua habilidade única 
       type: 'single',
       title: 'Eu Tô Aqui',
       year: '2021',
-      cover: 'https://i.scdn.co/image/ab6761610000f178e792afe1dce7b256e63f67e3',
+      cover: '/Eu to aqui.jpg',
       spotifyEmbed: 'https://open.spotify.com/embed/track/1F6alK8YopoNtnQAd1PjdI',
       links: {
         spotify: 'https://open.spotify.com/track/1F6alK8YopoNtnQAd1PjdI?si=7ac60ad886e049fc',
@@ -114,7 +115,7 @@ Bruno B6 é um talentoso rapper brasileiro, conhecido por sua habilidade única 
   // ─── CONTATO ───────────────────────────────────────────────────────────────
   contact: {
     // [PLACEHOLDER] Crie uma conta gratuita em https://formspree.io e substitua o endpoint abaixo
-    formspreeEndpoint: 'https://formspree.io/f/YOUR_FORM_ID',
+    formspreeEndpoint: 'https://formspree.io/f/maewpnvz',
     email: 'contato@brunob6.com', // exibido como fallback
   },
 }

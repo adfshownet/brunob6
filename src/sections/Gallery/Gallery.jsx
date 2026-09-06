@@ -5,16 +5,24 @@ import artist from '../../data/artist'
 
 export default function Gallery() {
   const [ref, visible] = useFadeIn()
-  const [lightbox, setLightbox] = useState(null)
+  const [lightboxIndex, setLightboxIndex] = useState(null)
   const lightboxRef = useRef(null)
 
   // Move foco para o lightbox ao abrir — necessário para capturar Escape via teclado
   useEffect(() => {
-    if (lightbox) lightboxRef.current?.focus()
-  }, [lightbox])
+    if (lightboxIndex !== null) lightboxRef.current?.focus()
+  }, [lightboxIndex])
 
   const photos = artist.gallery.filter((g) => g.type === 'photo')
   const videos = artist.gallery.filter((g) => g.type === 'video')
+
+  function prev() {
+    setLightboxIndex((i) => (i === 0 ? photos.length - 1 : i - 1))
+  }
+
+  function next() {
+    setLightboxIndex((i) => (i === photos.length - 1 ? 0 : i + 1))
+  }
 
   return (
     <section id="galeria" className={`section section--alt ${styles.section}`} aria-label="Galeria">
@@ -25,11 +33,11 @@ export default function Gallery() {
 
           {/* Grid de fotos */}
           <div className={styles.grid}>
-            {photos.map((photo) => (
+            {photos.map((photo, idx) => (
               <button
                 key={photo.id}
                 className={styles.item}
-                onClick={() => setLightbox(photo)}
+                onClick={() => setLightboxIndex(idx)}
                 aria-label={`Ampliar foto: ${photo.alt}`}
               >
                 <img
@@ -70,26 +78,64 @@ export default function Gallery() {
       </div>
 
       {/* Lightbox */}
-      {lightbox && (
+      {lightboxIndex !== null && (
         <div
           className={styles.lightbox}
           ref={lightboxRef}
           role="dialog"
           aria-modal="true"
-          aria-label={`Foto ampliada: ${lightbox.alt}`}
-          onClick={() => setLightbox(null)}
-          onKeyDown={(e) => e.key === 'Escape' && setLightbox(null)}
+          aria-label={`Foto ampliada: ${photos[lightboxIndex].alt}`}
+          onClick={() => setLightboxIndex(null)}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') setLightboxIndex(null)
+            if (e.key === 'ArrowLeft') prev()
+            if (e.key === 'ArrowRight') next()
+          }}
           tabIndex={0}
         >
-          <button className={styles.lightboxClose} aria-label="Fechar">✕</button>
+          <button
+            className={styles.lightboxClose}
+            aria-label="Fechar"
+            onClick={(e) => {
+              e.stopPropagation()
+              setLightboxIndex(null)
+            }}
+          >
+            ✕
+          </button>
+
+          <button
+            className={`${styles.lightboxNav} ${styles.lightboxPrev}`}
+            aria-label="Anterior"
+            onClick={(e) => {
+              e.stopPropagation()
+              prev()
+            }}
+          >
+            ‹
+          </button>
+
           <img
-            src={lightbox.src}
-            alt={lightbox.alt}
+            src={photos[lightboxIndex].src}
+            alt={photos[lightboxIndex].alt}
             className={styles.lightboxImg}
             onClick={(e) => e.stopPropagation()}
           />
+
+          <button
+            className={`${styles.lightboxNav} ${styles.lightboxNext}`}
+            aria-label="Próxima"
+            onClick={(e) => {
+              e.stopPropagation()
+              next()
+            }}
+          >
+            ›
+          </button>
         </div>
       )}
     </section>
   )
 }
+
+/* prev/next implemented inside component */

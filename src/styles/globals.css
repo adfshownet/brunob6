@@ -13,8 +13,8 @@
   --color-bg:          #0d0d0d;   /* Fundo principal — preto grafite */
   --color-bg-card:     #1a1a1a;   /* Fundo de cards/seções alternadas */
   --color-bg-alt:      #111111;   /* Seções alternadas */
-  --color-accent:      #ff5f00;   /* Laranja neon — cor de destaque */
-  --color-accent-dark: #cc4a00;   /* Laranja escuro para hover */
+  --color-accent:      #e60000;   /* Vermelho — cor de destaque (antes laranja) */
+  --color-accent-dark: #b30000;   /* Vermelho escuro para hover */
   --color-text:        #f0ece6;   /* Branco sujo — texto principal */
   --color-text-muted:  #8a8a8a;   /* Texto secundário / muted */
   --color-border:      #2a2a2a;   /* Bordas sutis */
@@ -52,7 +52,7 @@
   --radius-lg: 16px;
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.6);
-  --shadow-accent: 0 0 20px rgba(255, 95, 0, 0.3);
+  --shadow-accent: 0 0 20px rgba(230, 0, 0, 0.28);
 
   /* ── Transições ── */
   --transition-fast: 0.15s ease;
